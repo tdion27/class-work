@@ -9,7 +9,6 @@
 class Board:
     """ a data type for a Connect Four board with arbitrary dimensions
     """   
-    ### add your constructor here ###
     def __init__(self, height, width):
         self.height = height
         self.width = width 
@@ -31,7 +30,6 @@ class Board:
 
             s += '\n'  # newline at the end of the row
 
-        ### add your code here ###
         for i in range(self.width * 2 + 1):
             s += '-' 
         s += '\n'
@@ -50,7 +48,6 @@ class Board:
         assert(checker == 'X' or checker == 'O')
         assert(col >= 0 and col < self.width)
         
-        ### put the rest of the method here ###
         row = 0
         for r in range(len(self.slots) - 1):
             if self.slots[row + 1][col] != ' ':
@@ -61,7 +58,6 @@ class Board:
         
 
   
-    ### add your reset method here ###
     def reset(self):
         """resets the board"""
         self.slots = [[' '] * self.width for r in range(self.height)]
@@ -84,7 +80,6 @@ class Board:
             else:
                 checker = 'X'
 
-    ### add your remaining methods here
     def can_add_to(self, col):
         """determines if a checker can be added to a column"""
         if col > (len(self.slots[0]) - 1) or col < 0:
@@ -173,4 +168,5 @@ class Board:
         return False 
                                     
         
+
             
